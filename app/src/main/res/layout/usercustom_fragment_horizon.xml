@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/UserCustomLayout">
+
+    <ImageButton
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/Btn_usercustom_BG"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:nestedScrollingEnabled="true"
+        android:background="#00ffffff"
+        android:scaleType="centerCrop" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/Black_FL"
+        android:background="#010101"
+        android:longClickable="false"
+        android:alpha="0.3">
+
+    </FrameLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/front"
+        android:adjustViewBounds="false"
+        android:background="#00ffffff" />
+
+    <ImageButton
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:id="@+id/Btn_usercustom_option"
+        android:src="@drawable/abc_ic_menu_overflow_material"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:background="#00ffffff"
+        android:padding="15dp"
+        android:layout_marginTop="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="LockScreenPlayer"
+        android:id="@+id/tv_empty"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <FrameLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/VideoParentLayout"
+        android:layout_centerVertical="true">
+
+        <VideoView
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
+            android:id="@+id/videoView"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="전체화면"
+            android:id="@+id/full_video"
+            android:layout_gravity="right|top"
+            android:onClick="full_video"
+            android:background="#66000000"
+            android:textColor="#ffffff"
+            android:visibility="gone" />
+
+    </FrameLayout>
+
+</RelativeLayout>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--<style android:name="PauseDialog" android:parent="@android:style/Theme.Dialog">-->
+    <!--<item android:name="android:windowAnimationStyle">@style/PauseDialogAnimation</item>-->
+    <!--</style>-->
+
+    <!--<style android:name="PauseDialogAnimation">-->
+    <!--<item android:name="android:windowEnterAnimation">@anim/fadein</item>-->
+    <!--<item android:name="android:windowExitAnimation">@android:anim/slide_out_right</item>-->
+    <!--</style>-->
+
+</set>

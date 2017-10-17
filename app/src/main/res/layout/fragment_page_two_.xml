@@ -1,0 +1,161 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Purchase_Fragment"
+    android:columnCount="3"
+    android:rowCount="4">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="3"
+        android:layout_centerHorizontal="true"
+        android:background="#dcdcdc"
+        android:padding="5dp">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:weightSum="9"
+            android:id="@+id/linearLayout2"
+            android:layout_weight="1"
+            android:background="#dcdcdc">
+
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/Convenience_Store"
+                android:text="편의점"
+                android:layout_weight="4.5"
+                android:textSize="20dp"
+                android:onClick="Use_point_item"
+                android:src="@drawable/convenience"
+                android:scaleType="centerCrop"
+                android:background="#ffffff"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="5dp" />
+
+
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/Cafe"
+                android:text="카페"
+                android:layout_weight="4.5"
+                android:layout_gravity="bottom"
+                android:textSize="20dp"
+                android:onClick="Use_point_item"
+                android:src="@drawable/cafe"
+                android:scaleType="centerCrop"
+                android:background="#ffffff"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="5dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="9"
+            android:id="@+id/linearLayout3"
+            android:layout_below="@+id/linearLayout2"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="1"
+            android:background="#dcdcdc">
+
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/Eat_Out"
+                android:text="외식"
+                android:layout_weight="4.5"
+                android:textSize="20dp"
+                android:onClick="Use_point_item"
+                android:src="@drawable/eatout"
+                android:scaleType="centerCrop"
+                android:background="#ffffff"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="5dp" />
+
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/Culture_Performence"
+                android:text="문화/공연"
+                android:layout_weight="4.5"
+                android:textSize="20dp"
+                android:onClick="Use_point_item"
+                android:src="@drawable/culture"
+                android:scaleType="centerCrop"
+                android:background="#ffffff"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="5dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="9"
+            android:id="@+id/linearLayout4"
+            android:layout_below="@+id/linearLayout3"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/cafe"
+            android:scaleType="centerCrop"
+            android:background="#dcdcdc"
+            android:layout_weight="1">
+
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/Bakery"
+                android:text="베이커리"
+                android:layout_weight="4.5"
+                android:textSize="20dp"
+                android:onClick="Use_point_item"
+                android:src="@drawable/bakery"
+                android:scaleType="centerCrop"
+                android:background="#ffffff"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="5dp" />
+
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/Gift"
+                android:text="상품권"
+                android:layout_weight="4.5"
+                android:textSize="20dp"
+                android:onClick="Use_point_item"
+                android:src="@drawable/gift"
+                android:scaleType="centerCrop"
+                android:background="#ffffff"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="5dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

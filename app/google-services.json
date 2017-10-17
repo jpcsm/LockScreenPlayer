@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "173682289586",
+    "firebase_url": "https://lockscreen-155806.firebaseio.com",
+    "project_id": "lockscreen-155806",
+    "storage_bucket": "lockscreen-155806.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:173682289586:android:9801a26fbb6c0191",
+        "android_client_info": {
+          "package_name": "com.lockscreenplayer.js.lockscreenplayer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "173682289586-d3o2dd6ri37d9dtk1i542qfsc0hap2h5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.lockscreenplayer.js.lockscreenplayer",
+            "certificate_hash": "0249EE0C1874971BF3CF8C1129A18E4AEBF4A83E"
+          }
+        },
+        {
+          "client_id": "173682289586-ps8ok2q4obapjn3ll5424ds653abfaqk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBiAmqEiGZE9dzVfsudC3n3dFl85FK4O-0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "173682289586-ps8ok2q4obapjn3ll5424ds653abfaqk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

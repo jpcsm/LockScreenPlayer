@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.lockscreenplayer.js.lockscreenplayer">
+    &amp;amp;amp;lt;meta-data android:name="com.mypackage.MyGlideModule" android:value="GlideModule"
+    /&amp;amp;amp;gt;
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MANAGE_DOCUMENTS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission
+        android:name="android.permission.camera"
+        android:required="true" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    "android.permission.MEDIA_MOUNTED"
+    <uses-permission android:name="MEDIA" />
+
+    <!-- 죽어도 살아나는 서비스 -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 최상단 액티비티 권한 - 캐시슬라이드 위에 잠금화면 -->
+    <!-- <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" /> -->
+    <!-- 전화올때 전화상태 가져오기 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <!-- 웨이크락 -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <!-- 구글맵 권한 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <!-- 위치정보접근 권한 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- AndroidManifest.xml 에 추가해야할 인터넷 사용 허가권 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- 기기마다 화면 사이즈가 다르기 때문에 다양한 사이즈의 스크린에 적절하게 어플리케이션이 표시될 수 있도록 화면 사이즈를 조절 -->
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:resizeable="true"
+        android:smallScreens="true" />
+    <!--ndroid:name=".FontApplication"-->
+    <application
+        android:name="android.support.multidex.MultiDexApplication"
+
+        android:allowBackup="true"
+        android:icon="@drawable/mainicon"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".home"
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
+
+        <service
+            android:name=".LockScreenService"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="android.permission.SYSTEM_ALERT_WINDOW"
+            android:process=":remote" />
+
+        <!-- android:theme="@style/AppTheme.NoActionBar" -->
+        <receiver
+            android:name=".RestartService"
+            android:enabled="true"
+            android:exported="false"
+            android:label="RestartService"
+            android:process=":remote">
+            <intent-filter>
+                <action android:name="ACTION.RESTART.LockScreenService" />
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.PHONE_STATE" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name=".settings"
+            android:label="설정" />
+        <activity
+            android:name=".lock_pager"
+            android:excludeFromRecents="true"
+            android:label="@string/title_activity_lock_pager"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/lockScreen" />
+        <!-- <= 현재 태스크내에 남지 않길 바란다. -->
+        <!-- 잠금화면은 깔끔하게 사라져야 한다. -->
+        <!-- <= 폰에서 잠금화면은 보통 세로모드이다. -->
+        <com.google.android.youtube.player.YouTubePlayerView
+            android:id="@+id/youtube_player"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#fff"
+            android:padding="5dp" />
+
+        <activity android:name=".MainActivity" />
+        <activity android:name=".youtubeActivity" />
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".SignInActivity" />
+        <activity android:name=".GoodsActivity" />
+        <activity android:name=".GoodsDetailActivity" />
+        <activity android:name=".CouponDetailActivity" />
+
+        <meta-data
+            android:name="com.kakao.sdk.AppKey"
+            android:value="@string/kakao_app_key" />
+        <!--
+ ATTENTION: This was auto-generated to add Google Play services to your project for
+     App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
+        -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <service android:name=".MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service android:name=".MyFirebaseInstanceIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+
+        <!-- 잠금화면 비디오뷰 전체화면 클릭시 풀스크린액티비티로이동 -->
+        <activity
+            android:name=".VideoViewFullscreenActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/lockScreen">
+
+            <!-- 액티비티 가로고정 -->
+            <!-- 비디오뷰 풀스크린(전체화면) -->
+            <!-- Status Bar와 Title Bar가 모두 없는 상태 -->
+        </activity>
+
+        <!-- 구글맵 API -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAYb6XSAEUdqffiQ4nchf7KBJ7QQ7zKmUg" />
+
+        <service
+            android:name=".GpsInfo"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity
+            android:name=".FilterCameraActivity"
+            android:theme="@style/lockScreen" />
+        <activity
+            android:name=".Tutorial3Activity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".FontActivity"
+            android:theme="@style/lockScreen" />
+        <activity
+            android:name=".SplashActivity"
+            android:theme="@style/lockScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#f3bc5c</color>
+    <color name="colorPrimaryDark">#cfa150</color>
+    <!--3F51B5-->
+    <!--303F9F-->
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="black_overlay">#66000000</color>
+
+    <color name="blur_lock">#003c3838</color>
+
+
+</resources>

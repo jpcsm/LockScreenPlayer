@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.lockscreenplayer.js.lockscreenplayer.GoodsDetailActivity">
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:id="@+id/detail_image"
+        android:layout_below="@+id/detail_brand_name"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:src="#ff9100" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="상품명상품명"
+        android:id="@+id/detail_brand_name"
+        android:textSize="26dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:textColor="#000000" />
+
+    <ImageButton
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="구매하기"
+        android:id="@+id/good_purchase"
+        android:layout_marginBottom="10dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="#00fba716"
+        android:textSize="20dp"
+        android:nestedScrollingEnabled="false"
+        android:onClick="good_purchase"
+        android:src="@drawable/purchase_button"
+        android:scaleType="fitCenter"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_weight="1" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/linearLayout7"
+        android:layout_below="@+id/detail_image">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayout6"
+            android:layout_above="@+id/linearLayout7"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="현재 적립금"
+                android:id="@+id/textView"
+                android:layout_alignBottom="@+id/detail_current_point"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:textSize="16dp"
+                android:textColor="#636363" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"></LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/detail_current_point"
+                android:textSize="16dp"
+                android:textColor="#636363"
+                android:layout_above="@+id/good_purchase"
+                android:layout_alignRight="@+id/linearLayout6"
+                android:layout_alignEnd="@+id/linearLayout6" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayout8"
+            android:layout_above="@+id/linearLayout7"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="30dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="결제금액"
+                android:id="@+id/textView6"
+                android:layout_alignBottom="@+id/detailprice"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:textSize="20dp"
+                android:textColor="#ff4400" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1.000 P"
+                android:id="@+id/detailprice"
+                android:textSize="20dp"
+                android:textColor="#ff4400"
+                android:layout_above="@+id/good_purchase"
+                android:layout_alignRight="@+id/linearLayout6"
+                android:layout_alignEnd="@+id/linearLayout6" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayout9"
+            android:layout_above="@+id/linearLayout7"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="5dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="결제후 금액"
+                android:id="@+id/textView8"
+                android:layout_alignBottom="@+id/after_point"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:textSize="16dp"
+                android:textColor="#636363" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/after_point"
+                android:textSize="16dp"
+                android:textColor="#636363"
+                android:layout_above="@+id/good_purchase"
+                android:layout_alignRight="@+id/linearLayout6"
+                android:layout_alignEnd="@+id/linearLayout6" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/good_purchase"
+        android:id="@+id/linearLayout7"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:id="@+id/textView5" />
+    </LinearLayout>
+
+</RelativeLayout>

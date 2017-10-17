@@ -1,0 +1,17 @@
+*.iml
+.gradle
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries
+.DS_Store
+/build
+/captures
+app/src/main/obj/local/**/*
+app/src/main/jniLibs/**/*
+app/src/main/libs/**/*
+*.class
+
+generated/**/*
+openCVLibrary320/build/generated/**/*
+openCVLibrary320/build/**/*
+library/build/**/*

@@ -1,0 +1,15 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.lockscreenplayer.js.lockscreenplayer.CouponDetailActivity">
+    <item
+        android:id="@+id/action_gift"
+        android:orderInCategory="100"
+        android:title="선물하기"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_save"
+        android:orderInCategory="100"
+        android:title="저장하기"
+        app:showAsAction="never" />
+</menu>

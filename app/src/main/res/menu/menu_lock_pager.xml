@@ -1,0 +1,15 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.lockscreenplayer.js.lockscreenplayer.lock_pager">
+    <item
+    android:id="@+id/action_settings"
+    android:orderInCategory="100"
+    android:title="설정"
+    app:showAsAction="never" />
+    <item
+        android:id="@+id/action_point"
+        android:orderInCategory="100"
+        android:title="포인트적립내역"
+        app:showAsAction="never" />
+</menu>
