@@ -49,7 +49,7 @@ public class TabPagerAdapter extends FragmentPagerAdapter {
             case 1:
                 return Coupon_fragment.newInstance();
             case 2:
-                return Google_Maps_Fragment.newInstance();
+                return MapsFragment.newInstance();
             default:
                 return null;
         }

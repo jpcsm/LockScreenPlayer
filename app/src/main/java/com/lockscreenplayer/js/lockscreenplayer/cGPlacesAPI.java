@@ -22,6 +22,8 @@ import java.util.LinkedList;
  */
 public class cGPlacesAPI
 {
+
+
     Context mContext;
     StringBuilder mResponseBuilder = new StringBuilder();
     Float color;
@@ -71,7 +73,7 @@ public class cGPlacesAPI
 //        if(jObj.getString("next_page_token")!=null){
 //            next_page_token = jObj.getString("next_page_token");
 //        }
-        Log.d("락스크린 parsing() next_page_token", next_page_token);
+        Log.d("락스크린", " parsing() next_page_token"+next_page_token);
 
         for (int i = 0; i < jArr.length(); i++)
         {

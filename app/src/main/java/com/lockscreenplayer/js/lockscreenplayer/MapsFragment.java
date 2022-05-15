@@ -9,11 +9,9 @@ import android.graphics.Point;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.InflateException;
 import android.view.LayoutInflater;
@@ -22,7 +20,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -41,12 +38,9 @@ import com.skp.Tmap.TMapPoint;
 import com.skp.Tmap.TMapPolyLine;
 import com.skp.Tmap.TMapTapi;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
-
 import java.util.ArrayList;
 
-public class Google_Maps_Fragment extends Fragment implements OnMapReadyCallback,
+public class MapsFragment extends Fragment implements OnMapReadyCallback,
         GoogleMap.OnMapClickListener {
 
     private static final String TAG = "googlemap";
@@ -60,17 +54,10 @@ public class Google_Maps_Fragment extends Fragment implements OnMapReadyCallback
     LatLng SEOUL = new LatLng(37.56, 126.97);
 
 
-    CouponAdapter mAdapter;
-    RecyclerView mRecyclerView;
-    RecyclerView.LayoutManager mLayoutManager;
     coupon_item item;
     home home;
-    JSONObject jsonObject;
-    JSONArray jsonArray;
     FirebaseAuth mFirebaseAuth;
-    FirebaseAuth.AuthStateListener mFirebaseAuthListener;
     FirebaseUser mFirebaseUser;
-    GoogleApiClient mGoogleApiClient;
 
 
     cGPlacesAPI places;
@@ -89,13 +76,13 @@ public class Google_Maps_Fragment extends Fragment implements OnMapReadyCallback
 //        createLocationRequest();
 //    }
 
-    public Google_Maps_Fragment() {
+    public MapsFragment() {
         // Required empty public constructor
     }
 
 
-    public static Google_Maps_Fragment newInstance() {
-        Google_Maps_Fragment fragment = new Google_Maps_Fragment();
+    public static MapsFragment newInstance() {
+        MapsFragment fragment = new MapsFragment();
         Bundle args = new Bundle();
 
         fragment.setArguments(args);
@@ -141,11 +128,7 @@ public class Google_Maps_Fragment extends Fragment implements OnMapReadyCallback
     TextView tv_empty;
     SupportMapFragment fragment;
 
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
 
-    }
 
     ViewGroup rootView;
 
@@ -156,6 +139,8 @@ public class Google_Maps_Fragment extends Fragment implements OnMapReadyCallback
 //        mLocationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);// 가장 높은 정확도 배터리 소모 많음
 //
 //    }
+
+
     ArrayList<TMapPoint> arrayPoint;
     @Override
     public View onCreateView(LayoutInflater inflater, final ViewGroup container, Bundle savedInstanceState) {
@@ -177,11 +162,13 @@ public class Google_Maps_Fragment extends Fragment implements OnMapReadyCallback
             }
 
         }
+
         try {
             rootView = (ViewGroup) inflater.inflate(R.layout.google_maps_fragment, container, false);
         } catch (InflateException e) {
 
         }
+
         FragmentManager fm = getChildFragmentManager();
         fragment = (SupportMapFragment) fm.findFragmentById(R.id.map);
         if (fragment == null) {
@@ -427,6 +414,7 @@ public class Google_Maps_Fragment extends Fragment implements OnMapReadyCallback
 //            Log.d("test", "onStatusChanged, provider:" + provider + ", status:" + status + " ,Bundle:" + extras);
 //        }
 //    };
+
 LatLng GPSlatLng;
     //현재위치 가져오기{
     public void GPS_getcurrentpoint(){
@@ -509,6 +497,7 @@ LatLng GPSlatLng;
 
 
                                 //mMapView.addTMapPath(polyLine); 티맵에 경로그리기
+
                                 //구글맵에 경로그리기
                                 LatLng startLatLng = new LatLng(gps.getLatitude(), gps.getLongitude());
                                 polylineOptions = new PolylineOptions();
@@ -689,6 +678,7 @@ LatLng GPSlatLng;
             }
         }).start();
     }
+
     //검색버튼 클릭리스너
     public void SearchButtonClicked(ViewGroup rootView) {
         Button Category_All = (Button)rootView.findViewById(R.id.all);
@@ -721,6 +711,8 @@ LatLng GPSlatLng;
             }
         });
     }
+
+
     //편의점검색 마커추가
     public void SearchConvenienceStoreMaker(){
         googleMap.clear();

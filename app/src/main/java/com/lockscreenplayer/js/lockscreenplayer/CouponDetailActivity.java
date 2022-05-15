@@ -597,7 +597,7 @@ public class CouponDetailActivity extends AppCompatActivity {
 
                 runOnUiThread(new Runnable() {
                     public void run() {
-                        Log.d("락스크린 MalformedURLException Exception","check script url.");
+                        Log.d("락스크린","check script url.");
                         Toast.makeText(getApplication(), "MalformedURLException",
                                 Toast.LENGTH_SHORT).show();
                     }

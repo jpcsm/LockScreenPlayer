@@ -1,7 +1,6 @@
 package com.lockscreenplayer.js.lockscreenplayer;
 
 import android.Manifest;
-import android.app.ActionBar;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -18,9 +17,6 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.text.Spannable;
-import android.text.SpannableString;
-import android.text.style.TypefaceSpan;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -34,7 +30,6 @@ import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.auth.api.signin.GoogleSignInResult;
 import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.FirebaseAuth;
@@ -47,14 +42,15 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.text.DecimalFormat;
+
 public class home extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,GoogleApiClient.OnConnectionFailedListener{
+
     FirebaseAuth mFirebaseAuth;
     FirebaseAuth.AuthStateListener mFirebaseAuthListener;
     FirebaseUser mFirebaseUser;
     String mUsername;
     String mPhotoUrl;
-    SignInButton mSigninGoogleButton;
     GoogleApiClient mGoogleApiClient;
     private Menu m_Menu = null;
     static Boolean bLog =false;
@@ -197,8 +193,12 @@ public class home extends AppCompatActivity
         tabPagerAdapter = new TabPagerAdapter(getSupportFragmentManager());
         tab_viewPager = (ViewPager)findViewById(R.id.home_viewpager);
         tab_viewPager.setAdapter(tabPagerAdapter);
+
+
         TabLayout mTab = (TabLayout)findViewById(R.id.tabs);
         mTab.setupWithViewPager(tab_viewPager);
+
+
         mProgressDialog = new ProgressDialog(home.this );
         mProgressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         mProgressDialog.setMessage("잠시만 기다려주세요...");
@@ -289,18 +289,18 @@ public class home extends AppCompatActivity
                     int grantResult = grantResults[i];
                     if (permission.equals(Manifest.permission.CAMERA)) {
                         if(grantResult == PackageManager.PERMISSION_GRANTED) {
-                            Log.d("onRequestPermissionsResult","MANAGE_DOCUMENTS 권한 접근 허가");
+                            Log.d("","MANAGE_DOCUMENTS 권한 접근 허가");
                         } else {
-                            Log.d("onRequestPermissionsResult","MANAGE_DOCUMENTS 권한 접근 불가");
+                            Log.d("","MANAGE_DOCUMENTS 권한 접근 불가");
                         }
                     }
                 }
                 break;
-            case 0: Log.d("onRequestPermissionsResult","0");
+            case 0: Log.d("","0");
                 break;
-            case 1:Log.d("onRequestPermissionsResult","1");
+            case 1:Log.d("","1");
                 break;
-            case -1:Log.d("onRequestPermissionsResult","-1");
+            case -1:Log.d("","-1");
                 break;
 
         }

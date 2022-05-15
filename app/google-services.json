@@ -15,16 +15,16 @@
       },
       "oauth_client": [
         {
+          "client_id": "173682289586-ps8ok2q4obapjn3ll5424ds653abfaqk.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
           "client_id": "173682289586-d3o2dd6ri37d9dtk1i542qfsc0hap2h5.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.lockscreenplayer.js.lockscreenplayer",
-            "certificate_hash": "0249EE0C1874971BF3CF8C1129A18E4AEBF4A83E"
+            "certificate_hash": "0249ee0c1874971bf3cf8c1129a18e4aebf4a83e"
           }
-        },
-        {
-          "client_id": "173682289586-ps8ok2q4obapjn3ll5424ds653abfaqk.apps.googleusercontent.com",
-          "client_type": 3
         }
       ],
       "api_key": [
