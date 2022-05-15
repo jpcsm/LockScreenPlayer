@@ -21,7 +21,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationRequest;
@@ -264,24 +263,24 @@ public class Google_Maps_Fragment extends Fragment implements OnMapReadyCallback
         tmaptapi.setOnAuthenticationListener(new TMapTapi.OnAuthenticationListenerCallback() {
             @Override
             public void SKPMapApikeySucceed() {
-               Log.d("락스크린 SKPMapApikeySucceed","");
+               Log.d("","락스크린 SKPMapApikeySucceed");
             }
 
             @Override
             public void SKPMapApikeyFailed(String s) {
-                Log.d("락스크린 SKPMapApikeyFailed",s);
+                Log.d("","락스크린 SKPMapApikeyFailed"+s);
             }
 
             @Override
             public void SKPMapBizAppIdSucceed() {
-                Log.d("락스크린 SKPMapBizAppIdSucceed","");
+                Log.d("락스크린 ","SKPMapBizAppIdSucceed");
 
             }
 
             @Override
             public void SKPMapBizAppIdFailed(String s) {
 
-                Log.d("락스크린 SKPMapBizAppIdFailed",s);
+                Log.d("락스크린 ","SKPMapBizAppIdFailed"+s);
             }
         });
 
